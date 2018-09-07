@@ -37,7 +37,6 @@ stream.on('news', (news) => {
     console.log(news)
 })
 
-
 stream.on('connect_error', (err) => {
     console.log(err)
 })
