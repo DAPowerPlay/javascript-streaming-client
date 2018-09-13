@@ -1,4 +1,9 @@
-const stream = require('socket.io-client')('https://streams.dapowerplay.com?apikey=xxxxxxxx&apisecret=xxxxxxxx')
+const apisecret = process.env.DPP_API_SECRET || 'xxxxxxxx'
+const apikey = process.env.DPP_API_KEY || 'xxxxxxxx'
+
+const url = 'https://streams.dapowerplay.com?apikey=' + apikey + '&apisecret=' + apisecret
+
+const stream = require('socket.io-client')(url)
 
 stream.on('connect', () => {
     console.log('connected')
